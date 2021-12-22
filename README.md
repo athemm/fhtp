@@ -6,7 +6,7 @@
 git clone https://github.com/athemm/fhtp.git && cd fhtp/server && python3 serve.py
 ```
 
-# launch client
+# launch client (needs tkinter)
 ```sh
 git clone https://github.com/athemm/fhtp.git && cd fhtp/client && python3 client.py
 ```
