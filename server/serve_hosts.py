@@ -15,4 +15,6 @@ def getPage(hostid,pageid):
     except Exception as e:
         print(e)
         return "<html><body><p>Code 404</p></body></html>"
+def map_host(hostid):
+    return os.listdir("hosts/" + hostid)
     

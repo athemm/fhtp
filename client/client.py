@@ -1,6 +1,8 @@
 from Modals.Zone import Zone
 from tkinterhtml import HtmlFrame
 from tkinter import *
+import time
+
 
 def html_render(resp):
     root2 = Tk()
@@ -9,12 +11,19 @@ def html_render(resp):
     frame.pack()
     frame.set_content("<html></html>")
     frame.set_content(resp)
+    end = time.time()
+    print(end - start)
     mainloop()
 
 def load_webpage():
+
+    global start
+    start = time.time()
     uri_val = uri.get()
+
     host = uri_val.split("/")[0]
     path = "/".join(uri_val.split("/")[1:])
+    print(rocks.request_hostmap(host))
     d = html_render(rocks.request_page(host, path))
 
 rocks = Zone(("127.0.0.1", 42031))

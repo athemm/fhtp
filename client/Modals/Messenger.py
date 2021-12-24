@@ -12,5 +12,6 @@ class Messenger:
     def decode(self):
 
         data = self.sock.recv(1000000)
+        print("L",len(data))
         data = zlib.decompress(data[4:]).decode()
         return data
